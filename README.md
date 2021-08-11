@@ -6,13 +6,22 @@ DaNIS3H Modules may be straightforwardly inspected which makes debugging them mu
 ```
 echo '<pre style="text-align: left;">';
 
-// PAGE MODULES
+// FULL PAGE MODULES
 print_r($Page_Modules); // <= See the entire $Page_Modules output
+
+// FULL ASSETS (STYLES, SCRIPTS, DATA ETC.)
+print_r($Page_Modules['Scripts']);
+print_r($Page_Modules['Vectors']);
+
+// SHOW MODULES WHICH INCLUDE SPECIFIC ASSETS
+print_r(array_keys($Page_Modules['Styles']));
+print_r(array_keys($Page_Modules['Data']));
 
 // PAGE MODULES REGISTER
 print_r($Page_Modules['Register']); // <= See the $Page_Modules Register
 print_r(array_keys($Page_Modules['Register'])); // <= See which Modules are Registered
 print_r($Page_Modules['Register']['SB_Colour_Charts']); // <= See the SB_Colour_Charts Module entry of the $Page_Modules Register
+print_r($Page_Modules['Register']['SB_Body_Data']['Attributes']); // See just the Attributes of the SB_Body_Data Module entry of the $Page_Modules Register
 
 // MISCELLANEOUS
 print_r(getPageModuleList($Page_Modules['Register'])); // <= No idea what this is...
@@ -26,30 +35,26 @@ print_r(${'<[Ash_Site_Search]>'});
 print_r(${'<[SB_Notice::Brexit]>'});
 print_r(${'<[SB_Notice::Covid_19]>'});
 
-// SPECIFIC COMPONENTS FROM INDIVIDUAL DaNIS3H MODULES
-print_r(${'<Markup[@]SB_Body_Data>'});
-print_r(${'<Markup[@]SB_nextPage>'});
-print_r(${'<Markup[@]Ash_Site_Search>'});
-
-// SPECIFIC COMPONENTS FROM INDIVIDUAL DaNIS3H MODULES (WITH STRONG MODIFIERS)
-print_r(${'<Markup[@]SB_Notice::Brexit>'});
-print_r(${'<Markup[@]SB_Notice::Covid_19>'});
-
-// PRIMECOMPONENTS FROM INDIVIDUAL DaNIS3H MODULES
+// SHOW PRIMECOMPONENTS FROM INDIVIDUAL DaNIS3H MODULES
 print_r(${'<SB_Body_Data>'});
 print_r(${'<SB_nextPage>'});
 print_r(${'<Ash_Site_Search>'});
 
-// PRIMECOMPONENTS FROM INDIVIDUAL DaNIS3H MODULES (WITH STRONG MODIFIERS)
+// SHOW PRIMECOMPONENTS FROM INDIVIDUAL DaNIS3H MODULES (WITH STRONG MODIFIERS)
 print_r(${'<SB_Notice::Brexit>'});
 print_r(${'<SB_Notice::Covid_19>'});
 
+// SHOW WHICH COMPONENTS AN INDIVIDUAL DaNIS3H MODULE HAS
+print_r(array_keys(${'<[SB_Translations]>'}['Components']));
 
-// print_r($Page_Modules['Register']['SB_Body_Data']['Attributes']);
-// print_r(array_keys($Page_Modules['Styles']));
-// print_r(array_keys(${'<[SB_Translations]>'}['Components']));
-// print_r(array_keys($Page_Modules['Data']));
-// print_r($Page_Modules['Scripts']);
+// SHOW SPECIFIC COMPONENTS FROM INDIVIDUAL DaNIS3H MODULES
+print_r(${'<Markup[@]SB_Body_Data>'});
+print_r(${'<Markup[@]SB_nextPage>'});
+print_r(${'<Markup[@]Ash_Site_Search>'});
+
+// SHOW SPECIFIC COMPONENTS FROM INDIVIDUAL DaNIS3H MODULES (WITH STRONG MODIFIERS)
+print_r(${'<Markup[@]SB_Notice::Brexit>'});
+print_r(${'<Markup[@]SB_Notice::Covid_19>'});
 
 echo '</pre>';
 

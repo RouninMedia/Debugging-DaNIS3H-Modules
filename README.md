@@ -1,4 +1,4 @@
-# Debugging DaNIS3H Modules
+# Inspecting DaNIS3H Modules
 A simple way to inspect and debug DaNIS3H Modules at the bottom of an Ashiva Scaffold.
 
 DaNIS3H Modules may be straightforwardly inspected which makes debugging them much easier:

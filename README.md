@@ -1,4 +1,4 @@
-# Inspecting DaNIS3H Modules
+# Inspecting and Debugging DaNIS3H Modules
 A simple way to inspect and debug DaNIS3H Modules at the bottom of an Ashiva Scaffold.
 
 DaNIS3H Modules may be straightforwardly inspected which makes debugging them much easier:
@@ -47,14 +47,17 @@ print_r(${'<SB_Notice::Covid_19>'});
 // SHOW WHICH COMPONENTS AN INDIVIDUAL DaNIS3H MODULE HAS
 print_r(array_keys(${'<[SB_Translations]>'}['Components']));
 
-// SHOW SPECIFIC COMPONENTS FROM INDIVIDUAL DaNIS3H MODULES
+// SHOW SPECIFIC COMPONENT FROM INDIVIDUAL DaNIS3H MODULE
 print_r(${'<Markup[@]SB_Body_Data>'});
 print_r(${'<Markup[@]SB_nextPage>'});
 print_r(${'<Markup[@]Ash_Site_Search>'});
 
-// SHOW SPECIFIC COMPONENTS FROM INDIVIDUAL DaNIS3H MODULES (WITH STRONG MODIFIERS)
+// SHOW SPECIFIC COMPONENT FROM INDIVIDUAL DaNIS3H MODULE (WITH STRONG MODIFIERS)
 print_r(${'<Markup[@]SB_Notice::Brexit>'});
 print_r(${'<Markup[@]SB_Notice::Covid_19>'});
+
+// SHOW SPECIFIC CUSTOM COMPONENT FROM INDIVIDUAL DaNIS3H MODULE
+print_r(${'<Open_Control_Pad_Button[@]Ashiva_Control_Pad>'});
 
 echo '</pre>';
 
